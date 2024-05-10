@@ -46,9 +46,9 @@ const server = createServer((req, res) => {
       }
     } else if (path.startsWith('/frutas/existe/')) {
       //devolver si existe o no la fruta // some toLocalecompare o toLowercase
-      const name = path.split('/').pop()
+      const nombre = path.split('/').pop()
       const encontrada = frutas.some((fruta) =>
-        fruta.nombre.toLowerCase().includes(name.toLowerCase())
+        fruta.nombre.toLowerCase().includes(nombre.toLowerCase())
       )
       if (encontrada) {
         res.writeHead(200, { 'Content-Type': 'text/html' })
